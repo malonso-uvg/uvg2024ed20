@@ -16,5 +16,6 @@ public class Calculador1 implements ICalculator{
         }
 
         return resultado * signo;
+
 	}
 }
