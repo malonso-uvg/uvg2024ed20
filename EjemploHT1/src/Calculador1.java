@@ -3,7 +3,7 @@ public class Calculador1 implements ICalculator{
 		return n1 + n2;
 	}
 
-    public int mult(int n1, int n2){
+    public int mult(int a, int b){
 		int resultado = 0;
         int signo = (a < 0 ^ b < 0) ? -1 : 1; // Determinar el signo del resultado
 
