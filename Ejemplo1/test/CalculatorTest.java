@@ -58,4 +58,11 @@ public class CalculatorTest {
         Calculator myCalc = new Calculator();
         assertEquals(8, myCalc.Multiplication(n1, n2));
     }
+
+    @Test
+    public void testMultiplicationWithZero() {
+        Calculator calculator = new Calculator();
+        int result = calculator.Multiplication(0, 5);
+        assertEquals(0, result);
+    }
 }
