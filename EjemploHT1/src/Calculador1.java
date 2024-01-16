@@ -5,12 +5,16 @@ public class Calculador1 implements ICalculator{
 
     public int mult(int n1, int n2){
 		int resultado = 0;
+        int signo = (a < 0 ^ b < 0) ? -1 : 1; // Determinar el signo del resultado
 
-        // Utilizar un bucle para sumar 'n2' a 'resultado' 'n1' veces
-        for (int i = 0; i < n2; i++) {
-            resultado += n1;
+        a = Math.abs(a);
+        b = Math.abs(b);
+
+        // Utilizar un bucle para sumar 'a' a 'resultado' 'b' veces
+        for (int i = 0; i < b; i++) {
+            resultado += a;
         }
 
-        return resultado;
+        return resultado * signo;
 	}
 }
