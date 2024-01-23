@@ -9,7 +9,7 @@ public class StackWithArrayTest {
     @Test
     public void testCount() {
         //IStack miStack = new StackWithArray(10);
-        IStack miStack = new StackWithNodes();
+        IStack<Integer> miStack = new StackWithNodes<Integer>();
         assertEquals(0, miStack.count());
         miStack.push(30);
         miStack.push(35);
@@ -19,7 +19,7 @@ public class StackWithArrayTest {
     @Test
     public void testIsEmpty() {
         //IStack miStack = new StackWithArray(10);
-        IStack miStack = new StackWithNodes();
+        IStack<Integer> miStack = new StackWithNodes<Integer>();
         assertEquals(true, miStack.isEmpty());
         miStack.push(30);
         assertEquals(false, miStack.isEmpty());
@@ -28,31 +28,38 @@ public class StackWithArrayTest {
     @Test
     public void testPeek() {
         //IStack miStack = new StackWithArray(10);
-        IStack miStack = new StackWithNodes();
-        assertEquals(0, miStack.peek());
+        IStack<Integer> miStack = new StackWithNodes<Integer>();
+        Integer extpectedValue = 0;
+        assertEquals(null, miStack.peek());
+        extpectedValue = 30;
         miStack.push(30);
-        assertEquals(30, miStack.peek());
-        assertEquals(30, miStack.peek());
+        assertEquals(extpectedValue, miStack.peek());
+        assertEquals(extpectedValue, miStack.peek());
     }
 
     @Test
     public void testPop() {
         //IStack miStack = new StackWithArray(10);
-        IStack miStack = new StackWithNodes();
-        assertEquals(0, miStack.peek());
+        IStack<Integer> miStack = new StackWithNodes<Integer>();
+        Integer extpectedValue = 0;
+        assertEquals(null, miStack.peek());
         miStack.push(30);
-        assertEquals(30, miStack.pop());
-        assertEquals(0, miStack.pop());
+        extpectedValue = 30;
+        assertEquals(extpectedValue, miStack.pop());
+        assertEquals(null, miStack.pop());
     }
 
     @Test
     public void testPush() {
         //IStack miStack = new StackWithArray(10);
-        IStack miStack = new StackWithNodes();
-        assertEquals(0, miStack.peek());
+        IStack<Integer> miStack = new StackWithNodes<Integer>();
+        Integer extpectedValue = 0;
+        assertEquals(null, miStack.peek());
         miStack.push(30);
-        assertEquals(30, miStack.peek());
+        extpectedValue = 30;
+        assertEquals(extpectedValue, miStack.peek());
         miStack.push(50);
-        assertEquals(50, miStack.peek());
+        extpectedValue = 50;
+        assertEquals(extpectedValue, miStack.peek());
     }
 }

@@ -1,47 +1,47 @@
-public class StackWithArray implements IStack {
+import java.util.ArrayList;
+
+public class StackWithArray<T> implements IStack<T> {
 
     private int index;
-    private int[] internalArray;
+    ArrayList<T> internalArray;
 
     public StackWithArray(int qty){
         index = 0;
-        internalArray = new int[qty];
+        internalArray = new ArrayList<T>(qty);
     }
 
     @Override
     public int count() {
-        return index;    
+        return internalArray.size();
     }
 
     @Override
     public boolean isEmpty() {
-        return index == 0;
+        return internalArray.isEmpty();
     }
 
     @Override
-    public void push(int value) {
-        if (index < internalArray.length){
-            internalArray[index] = value;
-            index++;
-        }
+    public void push(T value) {
+        
+            internalArray.add(value);
+        
     }
 
     @Override
-    public int pop() {
-        int tempValue = 0;
-        if (index > 0){
-            tempValue = internalArray[index - 1];
-            internalArray[index - 1] = 0;
-            index--;
+    public T pop() {
+        T tempValue = null;
+        if (internalArray.size() > 0){
+            tempValue = internalArray.remove(internalArray.size() - 1);
         }
+        
         return tempValue;
     }
 
     @Override
-    public int peek() {
-        int tempValue = 0;
-        if (index > 0){
-            tempValue = internalArray[index - 1];
+    public T peek() {
+        T tempValue = null;
+        if (internalArray.size() > 0){
+            tempValue = internalArray.get(internalArray.size() - 1);
         }
         return tempValue;
     }

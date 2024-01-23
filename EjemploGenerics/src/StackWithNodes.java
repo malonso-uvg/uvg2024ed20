@@ -1,6 +1,6 @@
-public class StackWithNodes implements IStack{
+public class StackWithNodes<T> implements IStack<T>{
 
-    private Node head;
+    private Node<T> head;
     int qty;
 
     public StackWithNodes(){
@@ -19,8 +19,8 @@ public class StackWithNodes implements IStack{
     }
 
     @Override
-    public void push(int value) {
-        Node newNode = new Node(value);
+    public void push(T value) {
+        Node<T> newNode = new Node<T>(value);
 
         if (isEmpty())    {
             head = newNode;
@@ -34,8 +34,8 @@ public class StackWithNodes implements IStack{
     }
 
     @Override
-    public int pop() {
-        int tempValue = 0;
+    public T pop() {
+        T tempValue = null;
         if (! isEmpty()){
             tempValue = head.value;
             head = head.next;
@@ -45,8 +45,8 @@ public class StackWithNodes implements IStack{
     }
 
     @Override
-    public int peek() {
-        int tempValue = 0;
+    public T peek() {
+        T tempValue = null;
         if (! isEmpty()){
             tempValue = head.value;
         }

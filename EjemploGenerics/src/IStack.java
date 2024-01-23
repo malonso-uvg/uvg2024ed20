@@ -1,4 +1,4 @@
-public interface IStack{
+public interface IStack<T>{
 
     /**
      * Devuelve la cantidad de elementos
@@ -8,10 +8,10 @@ public interface IStack{
 
     boolean isEmpty();
 
-    void push(int value);
+    void push(T value);
 
-    int pop();
+    T pop();
 
-    int peek();
+    T peek();
 
 }
