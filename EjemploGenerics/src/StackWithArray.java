@@ -20,6 +20,7 @@ public class StackWithArray<T> implements IStack<T> {
         return internalArray.isEmpty();
     }
 
+    
     @Override
     public void push(T value) {
         

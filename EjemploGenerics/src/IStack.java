@@ -6,6 +6,10 @@ public interface IStack<T>{
      */
     int count();
 
+    /**
+     * Este metodo nos indica si la ED stack esta vacia o no
+     * @return verdadero si esta vacia, falso de lo contrario
+     */
     boolean isEmpty();
 
     void push(T value);
