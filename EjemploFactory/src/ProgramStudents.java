@@ -8,7 +8,8 @@ public class ProgramStudents {
     
     public static void main(String[] args) {
         // Ejemplo de uso
-        XMLDataSource dataSource = new XMLDataSource();
+        //XMLDataSource dataSource = new XMLDataSource();
+
         List<Student> studentsToSave = new ArrayList<>();
 
         Scanner scanner = new Scanner(System.in);
@@ -33,8 +34,18 @@ public class ProgramStudents {
             studentsToSave.add(new Student(firstName, lastName, id));
         }
 
+        System.out.println("Seleccione su tipo de formato");
+        System.out.println("0 - CSV");
+        System.out.println("1 - XML");
+        System.out.println("2 - JSON");
+
+        int fileType = Integer.parseInt(scanner.nextLine());
+
+        IDataSource dataSource = DatasourceFactory.getDataSourceInstance(fileType);
+
+
         // Guardar estudiantes en un archivo XML
-        File savedFile = dataSource.saveStudents(studentsToSave, "students.xml");
+        File savedFile = dataSource.saveStudents(studentsToSave, "students");
         System.out.println("Estudiantes guardados en: " + savedFile.getAbsolutePath());
 
         // Leer estudiantes desde el archivo XML ToBeFixed

@@ -7,7 +7,7 @@ public class CSVDataSource implements IDataSource {
     @Override
     public File saveStudents(List<Student> students, String path) {
         try {
-            File file = new File(path);
+            File file = new File(path+".csv");
             FileWriter writer = new FileWriter(file);
 
             // Escribir encabezados al archivo CSV
