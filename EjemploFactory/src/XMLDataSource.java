@@ -25,18 +25,5 @@ public class XMLDataSource implements IDataSource {
         }
     }
 
-    @Override
-    public List<Student> getStudentsFromFile(File file, int fileType) {
-        List<Student> students = null;
-
-        try {
-            students = xmlMapper.readValue(file, new TypeReference<List<Student>>() {});
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return students;
-    }
-
 
 }
