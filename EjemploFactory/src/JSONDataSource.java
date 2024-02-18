@@ -26,17 +26,4 @@ public class JSONDataSource implements IDataSource {
         }
     }
 
-    @Override
-    public List<Student> getStudentsFromFile(File file, int fileType) {
-        List<Student> students = new ArrayList<>();
-
-        try {
-            students = objectMapper.readValue(file, new TypeReference<List<Student>>() {});
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return students;
-    }
-
 }

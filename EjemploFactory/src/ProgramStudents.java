@@ -48,9 +48,6 @@ public class ProgramStudents {
         File savedFile = dataSource.saveStudents(studentsToSave, "students");
         System.out.println("Estudiantes guardados en: " + savedFile.getAbsolutePath());
 
-        // Leer estudiantes desde el archivo XML ToBeFixed
-        //List<Student> studentsFromFile = dataSource.getStudentsFromFile(savedFile, 0);
-        //System.out.println("Estudiantes leídos desde el archivo XML: " + studentsFromFile);
     }
 
     
