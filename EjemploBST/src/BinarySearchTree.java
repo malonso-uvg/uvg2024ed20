@@ -32,6 +32,7 @@ public class BinarySearchTree<K, V> implements ITree<K, V> {
             if (result > 0){  //1 si K del node es mayor a K del parent se va para la derecha
                 if (parent.getRight() == null){ //PUedo insertarlo a la derecha
                     parent.setRight(node);
+                    node.setParent(parent); //easy for deletion to know who the parent is
                     this.count++;
                 } else {
                     internalInsert(parent.getRight(), node);
@@ -39,6 +40,7 @@ public class BinarySearchTree<K, V> implements ITree<K, V> {
             } else if (result < 0){ //-1 si K del node es menor a K del parent por lo tanto se va a la izquierda
                 if (parent.getLeft() == null){ //PUedo insertarlo a la derecha
                     parent.setLeft(node);
+                    node.setParent(parent);
                     this.count++;
                 } else {
                     internalInsert(parent.getLeft(), node);
@@ -85,8 +87,11 @@ public class BinarySearchTree<K, V> implements ITree<K, V> {
 
     @Override
     public V remove(K key) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'remove'");
+        if (!isEmpty()){
+
+        }
+        
+        return null;//if node is not find then null
     }
 
     @Override

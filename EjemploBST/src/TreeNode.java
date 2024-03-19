@@ -4,10 +4,12 @@ public class TreeNode<K, V> {
     private V value;
     private TreeNode<K,V> left;
     private TreeNode<K,V> right;
+    private TreeNode<K,V> parent;
 
     public TreeNode(K key, V value){
         this.key = key;
         this.value = value;
+        parent = null;
         left = null;
         right = null;
     }
@@ -42,6 +44,14 @@ public class TreeNode<K, V> {
 
     public void setRight(TreeNode<K, V> right) {
         this.right = right;
+    }
+
+    public TreeNode<K, V> getParent() {
+        return parent;
+    }
+
+    public void setParent(TreeNode<K, V> parent) {
+        this.parent = parent;
     }
 
     
